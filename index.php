@@ -12,6 +12,9 @@
 			high score list? If so, just <a href="addscore.php">add your 
 			own score</a>.
 		</p>
+		<p>
+			Administrate this application, visit <a href="admin.php">admin this application</a>.
+		</p>
 
 		<?php
 			require_once('appvars.php');
@@ -19,7 +22,7 @@
 			$dbc = mysqli_connect('localhost', 'root', 'qwe@898635', 'gwdb')
 				or die('Error, cannot connect to gwba database.');
 
-			$query = "SELECT * FROM guitarwars ORDER BY score DESC";
+			$query = "SELECT * FROM guitarwars WHERE approved=1 ORDER BY score DESC";
 			$data = mysqli_query($dbc, $query)
 				or die('Error, cannot query guitarwars table.');
 
