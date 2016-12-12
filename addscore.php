@@ -34,8 +34,8 @@
 									or die('Error, cannot connect to the database.');
 
 								// Write the data to the database
-								$query = "INSERT INTO guitarwars VALUES (NOW(), '$name', '$score'," .
-										"'$screenshot')";
+								$query = "INSERT INTO guitarwars (data, name, score, screenshot)".
+										"VALUES (NOW(), '$name', '$score', '$screenshot')";
 								mysqli_query($dbc, $query)
 									or die('Error, cannot insert data to the database.');
 			
